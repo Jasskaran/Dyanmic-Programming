@@ -14,7 +14,7 @@ int RodCut(int *price,int N)
 	for(int i=1;i<=N;i++)
 	{
 		int t= INT_MIN;
-		for(int j=0;j<i;j++)
+		for(int j=0;j<(i/2 +1);j++)
 		{
 			t=max(t,price[i-j-1]+table[j]);
 		}
