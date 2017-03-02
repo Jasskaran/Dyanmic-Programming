@@ -1,3 +1,6 @@
+/*3 2 5 10 7 ...returns 15
+ 3 2 7 10*/
+
 #include <iostream>
 using namespace std;
 
