@@ -1,3 +1,9 @@
+/* job1 (1,2,50)
+   job2 (3,5,20)
+   job3 (6,19,100)
+   job4 (2,100,200)
+   output is 250*/
+
 #include <iostream>
 #include <algorithm>
 using namespace std;
