@@ -1,0 +1,46 @@
+#include <cmath>
+#include <cstdio>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <string>
+using namespace std;
+
+int EditDistance(string str1,string str2)
+{
+    int l1=str1.size();
+    int l2=str2.size();
+    int table[l1+1][l2+1];
+    
+    for(int i=0;i<=l1;i++)
+    {
+        for(int j=0;j<=l2;j++)
+        {
+            if(i==0)
+                table[i][j]=j;
+            else if(j==0)
+                table[i][j]=i;
+            else if(str1[i-1]==str2[j-1])
+                table[i][j]=table[i-1][j-1];
+            else
+                table[i][j]=min(table[i-1][j-1]+2,min(table[i][j-1]+1,table[i-1][j]+1)); 
+        }
+    }
+    return table[l1][l2];
+}
+
+
+int main() {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+    int T;
+    cin>>T;
+    while(T)
+    {
+        string str1,str2;
+        cin>>str1;
+        cin>>str2;
+        cout<<EditDistance(str1,str2)<<endl;
+        T--;
+    }
+    return 0;
+}
